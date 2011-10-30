@@ -48,9 +48,9 @@ public class JSONTree extends TreeParser {
         }
         public JSONTree(TreeNodeStream input, RecognizerSharedState state) {
             super(input, state);
-             
+
         }
-        
+
 
     public String[] getTokenNames() { return JSONTree.tokenNames; }
     public String getGrammarFileName() { return "/development/grammars/json-antlr/grammar/JSONTree.g"; }
@@ -70,7 +70,7 @@ public class JSONTree extends TreeParser {
                 return new Double(result);
             }
         }
-        
+
         private String extractString(CommonTree token) {
             // StringBuffers are an efficient way to modify strings
             StringBuffer sb = new StringBuffer(token.getText());
@@ -121,7 +121,7 @@ public class JSONTree extends TreeParser {
                     case '\\':
                         sb.replace(slashIndex, slashIndex + 2, "\\"); // backslash
                         break;
-                        
+
                     case '/':
                         sb.replace(slashIndex, slashIndex + 2, "/"); // solidus
                         break;
@@ -231,7 +231,7 @@ public class JSONTree extends TreeParser {
 
                     state._fsp--;
 
-                     result = s; 
+                     result = s;
 
                     }
                     break;
@@ -243,7 +243,7 @@ public class JSONTree extends TreeParser {
 
                     state._fsp--;
 
-                     result = n; 
+                     result = n;
 
                     }
                     break;
@@ -255,7 +255,7 @@ public class JSONTree extends TreeParser {
 
                     state._fsp--;
 
-                     result = o; 
+                     result = o;
 
                     }
                     break;
@@ -267,31 +267,31 @@ public class JSONTree extends TreeParser {
 
                     state._fsp--;
 
-                     result = a; 
+                     result = a;
 
                     }
                     break;
                 case 5 :
                     // /development/grammars/json-antlr/grammar/JSONTree.g:131:4: TRUE
                     {
-                    match(input,TRUE,FOLLOW_TRUE_in_value85); 
-                     result =Boolean.TRUE; 
+                    match(input,TRUE,FOLLOW_TRUE_in_value85);
+                     result =Boolean.TRUE;
 
                     }
                     break;
                 case 6 :
                     // /development/grammars/json-antlr/grammar/JSONTree.g:132:4: FALSE
                     {
-                    match(input,FALSE,FOLLOW_FALSE_in_value92); 
-                    result = Boolean.FALSE; 
+                    match(input,FALSE,FOLLOW_FALSE_in_value92);
+                    result = Boolean.FALSE;
 
                     }
                     break;
                 case 7 :
                     // /development/grammars/json-antlr/grammar/JSONTree.g:133:4: NULL
                     {
-                    match(input,NULL,FOLLOW_NULL_in_value99); 
-                    result = null; 
+                    match(input,NULL,FOLLOW_NULL_in_value99);
+                    result = null;
 
                     }
                     break;
@@ -320,13 +320,13 @@ public class JSONTree extends TreeParser {
             // /development/grammars/json-antlr/grammar/JSONTree.g:137:2: ( ^( STRING String ) )
             // /development/grammars/json-antlr/grammar/JSONTree.g:137:4: ^( STRING String )
             {
-            match(input,STRING,FOLLOW_STRING_in_string117); 
+            match(input,STRING,FOLLOW_STRING_in_string117);
 
-            match(input, Token.DOWN, null); 
-            String1=(CommonTree)match(input,String,FOLLOW_String_in_string119); 
+            match(input, Token.DOWN, null);
+            String1=(CommonTree)match(input,String,FOLLOW_String_in_string119);
 
-            match(input, Token.UP, null); 
-             result = extractString(String1); 
+            match(input, Token.UP, null);
+             result = extractString(String1);
 
             }
 
@@ -347,14 +347,14 @@ public class JSONTree extends TreeParser {
     public final Map object() throws RecognitionException {
         Map result = null;
 
-         result = new HashMap(); 
+         result = new HashMap();
         try {
             // /development/grammars/json-antlr/grammar/JSONTree.g:143:2: ( ^( OBJECT ( pair[$result] )+ ) )
             // /development/grammars/json-antlr/grammar/JSONTree.g:143:4: ^( OBJECT ( pair[$result] )+ )
             {
-            match(input,OBJECT,FOLLOW_OBJECT_in_object147); 
+            match(input,OBJECT,FOLLOW_OBJECT_in_object147);
 
-            match(input, Token.DOWN, null); 
+            match(input, Token.DOWN, null);
             // /development/grammars/json-antlr/grammar/JSONTree.g:143:13: ( pair[$result] )+
             int cnt2=0;
             loop2:
@@ -390,7 +390,7 @@ public class JSONTree extends TreeParser {
             } while (true);
 
 
-            match(input, Token.UP, null); 
+            match(input, Token.UP, null);
 
             }
 
@@ -418,10 +418,10 @@ public class JSONTree extends TreeParser {
             // /development/grammars/json-antlr/grammar/JSONTree.g:147:2: ( ^( NUMBER Number ( Exponent )? ) )
             // /development/grammars/json-antlr/grammar/JSONTree.g:147:4: ^( NUMBER Number ( Exponent )? )
             {
-            match(input,NUMBER,FOLLOW_NUMBER_in_number169); 
+            match(input,NUMBER,FOLLOW_NUMBER_in_number169);
 
-            match(input, Token.DOWN, null); 
-            Number2=(CommonTree)match(input,Number,FOLLOW_Number_in_number171); 
+            match(input, Token.DOWN, null);
+            Number2=(CommonTree)match(input,Number,FOLLOW_Number_in_number171);
             // /development/grammars/json-antlr/grammar/JSONTree.g:147:20: ( Exponent )?
             int alt3=2;
             int LA3_0 = input.LA(1);
@@ -433,7 +433,7 @@ public class JSONTree extends TreeParser {
                 case 1 :
                     // /development/grammars/json-antlr/grammar/JSONTree.g:147:20: Exponent
                     {
-                    Exponent3=(CommonTree)match(input,Exponent,FOLLOW_Exponent_in_number173); 
+                    Exponent3=(CommonTree)match(input,Exponent,FOLLOW_Exponent_in_number173);
 
                     }
                     break;
@@ -441,8 +441,8 @@ public class JSONTree extends TreeParser {
             }
 
 
-            match(input, Token.UP, null); 
-             result = extractNumber(Number2, Exponent3); 
+            match(input, Token.UP, null);
+             result = extractNumber(Number2, Exponent3);
 
             }
 
@@ -466,14 +466,14 @@ public class JSONTree extends TreeParser {
         Object v = null;
 
 
-         list = new ArrayList(); 
+         list = new ArrayList();
         try {
             // /development/grammars/json-antlr/grammar/JSONTree.g:153:2: ( ^( ARRAY (v= value )+ ) )
             // /development/grammars/json-antlr/grammar/JSONTree.g:153:4: ^( ARRAY (v= value )+ )
             {
-            match(input,ARRAY,FOLLOW_ARRAY_in_array200); 
+            match(input,ARRAY,FOLLOW_ARRAY_in_array200);
 
-            match(input, Token.DOWN, null); 
+            match(input, Token.DOWN, null);
             // /development/grammars/json-antlr/grammar/JSONTree.g:153:12: (v= value )+
             int cnt4=0;
             loop4:
@@ -495,7 +495,7 @@ public class JSONTree extends TreeParser {
 
             	    state._fsp--;
 
-            	    list.add(v); 
+            	    list.add(v);
 
             	    }
             	    break;
@@ -510,7 +510,7 @@ public class JSONTree extends TreeParser {
             } while (true);
 
 
-            match(input, Token.UP, null); 
+            match(input, Token.UP, null);
 
             }
 
@@ -537,18 +537,18 @@ public class JSONTree extends TreeParser {
             // /development/grammars/json-antlr/grammar/JSONTree.g:157:2: ( ^( FIELD key= String v= value ) )
             // /development/grammars/json-antlr/grammar/JSONTree.g:157:4: ^( FIELD key= String v= value )
             {
-            match(input,FIELD,FOLLOW_FIELD_in_pair226); 
+            match(input,FIELD,FOLLOW_FIELD_in_pair226);
 
-            match(input, Token.DOWN, null); 
-            key=(CommonTree)match(input,String,FOLLOW_String_in_pair230); 
+            match(input, Token.DOWN, null);
+            key=(CommonTree)match(input,String,FOLLOW_String_in_pair230);
             pushFollow(FOLLOW_value_in_pair234);
             v=value();
 
             state._fsp--;
 
 
-            match(input, Token.UP, null); 
-             map.put(extractString(key), v); 
+            match(input, Token.UP, null);
+             map.put(extractString(key), v);
 
             }
 
@@ -566,7 +566,7 @@ public class JSONTree extends TreeParser {
     // Delegated rules
 
 
- 
+
 
     public static final BitSet FOLLOW_string_in_value50 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_number_in_value60 = new BitSet(new long[]{0x0000000000000002L});

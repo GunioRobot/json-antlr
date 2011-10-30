@@ -14,7 +14,7 @@ tokens {
 package net.nextquestion.json;
 
 import java.util.regex.Pattern;
-  
+
 }
 
 @lexer::header {
@@ -22,27 +22,27 @@ package net.nextquestion.json;
 }
 
 // Optional step: Disable automatic error recovery
-@members { 
-protected void mismatch(IntStream input, int ttype, BitSet follow) 
-throws RecognitionException 
-{ 
-throw new MismatchedTokenException(ttype, input); 
-} 
-public Object recoverFromMismatchedSet(IntStream input, 
-RecognitionException e, 
-BitSet follow) 
-throws RecognitionException 
-{ 
-throw e; 
-} 
-} 
-// Alter code generation so catch-clauses get replace with 
-// this action. 
-@rulecatch { 
-catch (RecognitionException e) { 
-throw e; 
-} 
-} 
+@members {
+protected void mismatch(IntStream input, int ttype, BitSet follow)
+throws RecognitionException
+{
+throw new MismatchedTokenException(ttype, input);
+}
+public Object recoverFromMismatchedSet(IntStream input,
+RecognitionException e,
+BitSet follow)
+throws RecognitionException
+{
+throw e;
+}
+}
+// Alter code generation so catch-clauses get replace with
+// this action.
+@rulecatch {
+catch (RecognitionException e) {
+throw e;
+}
+}
 
 
 
@@ -61,27 +61,27 @@ string 	: String
 	;
 
 // If you want to conform to the RFC, use a validating semantic predicate to check the result.
-number	: n=Number {Pattern.matches("(0|(-?[1-9]\\d*))(\\.\\d+)?", n.getText())}? 
-	    Exponent? 
+number	: n=Number {Pattern.matches("(0|(-?[1-9]\\d*))(\\.\\d+)?", n.getText())}?
+	    Exponent?
 	  -> ^(NUMBER Number Exponent?)
 	;
 
-object	: '{' members '}' 
+object	: '{' members '}'
 	  -> ^(OBJECT members)
 	;
-	
+
 array	: '[' elements ']'
 	  -> ^(ARRAY elements)
 	;
 
 elements: value (COMMA! value)*
 	;
-	
+
 members	: pair (COMMA! pair)*
 	;
-	 
-pair	: String ':' value 
-	  -> ^(FIELD String value) 
+
+pair	: String ':' value
+	  -> ^(FIELD String value)
 	;
 
 Number	: '-'? Digit+ ( '.' Digit+)?;
@@ -92,7 +92,7 @@ String 	:
 	'"' ( EscapeSequence | ~('\u0000'..'\u001f' | '\\' | '\"' | '/') )* '"'
 	;
 
-WS: (' '|'\n'|'\r'|'\t')+ {$channel=HIDDEN;} ; // ignore whitespace 
+WS: (' '|'\n'|'\r'|'\t')+ {$channel=HIDDEN;} ; // ignore whitespace
 
 fragment EscapeSequence
     	:   '\\' (UnicodeEscape |'b'|'t'|'n'|'f'|'r'|'\"'|'\''|'\\'|'\/')

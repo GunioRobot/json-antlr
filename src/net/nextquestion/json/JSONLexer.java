@@ -39,7 +39,7 @@ public class JSONLexer extends Lexer {
     // delegates
     // delegators
 
-    public JSONLexer() {;} 
+    public JSONLexer() {;}
     public JSONLexer(CharStream input) {
         this(input, new RecognizerSharedState());
     }
@@ -57,7 +57,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:7:7: ( ',' )
             // /development/grammars/json-antlr/grammar/JSON.g:7:9: ','
             {
-            match(','); 
+            match(',');
 
             }
 
@@ -77,7 +77,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:8:7: ( 'true' )
             // /development/grammars/json-antlr/grammar/JSON.g:8:9: 'true'
             {
-            match("true"); 
+            match("true");
 
 
             }
@@ -98,7 +98,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:9:7: ( 'false' )
             // /development/grammars/json-antlr/grammar/JSON.g:9:9: 'false'
             {
-            match("false"); 
+            match("false");
 
 
             }
@@ -119,7 +119,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:10:7: ( 'null' )
             // /development/grammars/json-antlr/grammar/JSON.g:10:9: 'null'
             {
-            match("null"); 
+            match("null");
 
 
             }
@@ -140,7 +140,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:11:7: ( '{' )
             // /development/grammars/json-antlr/grammar/JSON.g:11:9: '{'
             {
-            match('{'); 
+            match('{');
 
             }
 
@@ -160,7 +160,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:12:7: ( '}' )
             // /development/grammars/json-antlr/grammar/JSON.g:12:9: '}'
             {
-            match('}'); 
+            match('}');
 
             }
 
@@ -180,7 +180,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:13:7: ( '[' )
             // /development/grammars/json-antlr/grammar/JSON.g:13:9: '['
             {
-            match('['); 
+            match('[');
 
             }
 
@@ -200,7 +200,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:14:7: ( ']' )
             // /development/grammars/json-antlr/grammar/JSON.g:14:9: ']'
             {
-            match(']'); 
+            match(']');
 
             }
 
@@ -220,7 +220,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:15:7: ( ':' )
             // /development/grammars/json-antlr/grammar/JSON.g:15:9: ':'
             {
-            match(':'); 
+            match(':');
 
             }
 
@@ -251,7 +251,7 @@ public class JSONLexer extends Lexer {
                 case 1 :
                     // /development/grammars/json-antlr/grammar/JSON.g:87:10: '-'
                     {
-                    match('-'); 
+                    match('-');
 
                     }
                     break;
@@ -274,7 +274,7 @@ public class JSONLexer extends Lexer {
             	case 1 :
             	    // /development/grammars/json-antlr/grammar/JSON.g:87:15: Digit
             	    {
-            	    mDigit(); 
+            	    mDigit();
 
             	    }
             	    break;
@@ -299,7 +299,7 @@ public class JSONLexer extends Lexer {
                 case 1 :
                     // /development/grammars/json-antlr/grammar/JSON.g:87:24: '.' ( Digit )+
                     {
-                    match('.'); 
+                    match('.');
                     // /development/grammars/json-antlr/grammar/JSON.g:87:28: ( Digit )+
                     int cnt3=0;
                     loop3:
@@ -316,7 +316,7 @@ public class JSONLexer extends Lexer {
                     	case 1 :
                     	    // /development/grammars/json-antlr/grammar/JSON.g:87:28: Digit
                     	    {
-                    	    mDigit(); 
+                    	    mDigit();
 
                     	    }
                     	    break;
@@ -375,7 +375,7 @@ public class JSONLexer extends Lexer {
                 case 1 :
                     // /development/grammars/json-antlr/grammar/JSON.g:89:21: '-'
                     {
-                    match('-'); 
+                    match('-');
 
                     }
                     break;
@@ -385,7 +385,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:89:26: ( '1' .. '9' )
             // /development/grammars/json-antlr/grammar/JSON.g:89:27: '1' .. '9'
             {
-            matchRange('1','9'); 
+            matchRange('1','9');
 
             }
 
@@ -404,7 +404,7 @@ public class JSONLexer extends Lexer {
             	case 1 :
             	    // /development/grammars/json-antlr/grammar/JSON.g:89:37: Digit
             	    {
-            	    mDigit(); 
+            	    mDigit();
 
             	    }
             	    break;
@@ -433,7 +433,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:91:9: ( '\"' ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' ) )* '\"' )
             // /development/grammars/json-antlr/grammar/JSON.g:92:2: '\"' ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' ) )* '\"'
             {
-            match('\"'); 
+            match('\"');
             // /development/grammars/json-antlr/grammar/JSON.g:92:6: ( EscapeSequence | ~ ( '\\u0000' .. '\\u001f' | '\\\\' | '\\\"' | '/' ) )*
             loop7:
             do {
@@ -452,7 +452,7 @@ public class JSONLexer extends Lexer {
             	case 1 :
             	    // /development/grammars/json-antlr/grammar/JSON.g:92:8: EscapeSequence
             	    {
-            	    mEscapeSequence(); 
+            	    mEscapeSequence();
 
             	    }
             	    break;
@@ -477,7 +477,7 @@ public class JSONLexer extends Lexer {
                 }
             } while (true);
 
-            match('\"'); 
+            match('\"');
 
             }
 
@@ -553,7 +553,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:98:6: ( '\\\\' ( UnicodeEscape | 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' | '\\/' ) )
             // /development/grammars/json-antlr/grammar/JSON.g:98:10: '\\\\' ( UnicodeEscape | 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' | '\\/' )
             {
-            match('\\'); 
+            match('\\');
             // /development/grammars/json-antlr/grammar/JSON.g:98:15: ( UnicodeEscape | 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' | '\\/' )
             int alt9=10;
             switch ( input.LA(1) ) {
@@ -618,70 +618,70 @@ public class JSONLexer extends Lexer {
                 case 1 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:16: UnicodeEscape
                     {
-                    mUnicodeEscape(); 
+                    mUnicodeEscape();
 
                     }
                     break;
                 case 2 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:31: 'b'
                     {
-                    match('b'); 
+                    match('b');
 
                     }
                     break;
                 case 3 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:35: 't'
                     {
-                    match('t'); 
+                    match('t');
 
                     }
                     break;
                 case 4 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:39: 'n'
                     {
-                    match('n'); 
+                    match('n');
 
                     }
                     break;
                 case 5 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:43: 'f'
                     {
-                    match('f'); 
+                    match('f');
 
                     }
                     break;
                 case 6 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:47: 'r'
                     {
-                    match('r'); 
+                    match('r');
 
                     }
                     break;
                 case 7 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:51: '\\\"'
                     {
-                    match('\"'); 
+                    match('\"');
 
                     }
                     break;
                 case 8 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:56: '\\''
                     {
-                    match('\''); 
+                    match('\'');
 
                     }
                     break;
                 case 9 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:61: '\\\\'
                     {
-                    match('\\'); 
+                    match('\\');
 
                     }
                     break;
                 case 10 :
                     // /development/grammars/json-antlr/grammar/JSON.g:98:66: '\\/'
                     {
-                    match('/'); 
+                    match('/');
 
                     }
                     break;
@@ -703,11 +703,11 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:102:2: ( 'u' HexDigit HexDigit HexDigit HexDigit )
             // /development/grammars/json-antlr/grammar/JSON.g:102:4: 'u' HexDigit HexDigit HexDigit HexDigit
             {
-            match('u'); 
-            mHexDigit(); 
-            mHexDigit(); 
-            mHexDigit(); 
-            mHexDigit(); 
+            match('u');
+            mHexDigit();
+            mHexDigit();
+            mHexDigit();
+            mHexDigit();
 
             }
 
@@ -747,7 +747,7 @@ public class JSONLexer extends Lexer {
             // /development/grammars/json-antlr/grammar/JSON.g:110:2: ( '0' .. '9' )
             // /development/grammars/json-antlr/grammar/JSON.g:110:4: '0' .. '9'
             {
-            matchRange('0','9'); 
+            matchRange('0','9');
 
             }
 
@@ -851,91 +851,91 @@ public class JSONLexer extends Lexer {
             case 1 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:10: COMMA
                 {
-                mCOMMA(); 
+                mCOMMA();
 
                 }
                 break;
             case 2 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:16: T__21
                 {
-                mT__21(); 
+                mT__21();
 
                 }
                 break;
             case 3 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:22: T__22
                 {
-                mT__22(); 
+                mT__22();
 
                 }
                 break;
             case 4 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:28: T__23
                 {
-                mT__23(); 
+                mT__23();
 
                 }
                 break;
             case 5 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:34: T__24
                 {
-                mT__24(); 
+                mT__24();
 
                 }
                 break;
             case 6 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:40: T__25
                 {
-                mT__25(); 
+                mT__25();
 
                 }
                 break;
             case 7 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:46: T__26
                 {
-                mT__26(); 
+                mT__26();
 
                 }
                 break;
             case 8 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:52: T__27
                 {
-                mT__27(); 
+                mT__27();
 
                 }
                 break;
             case 9 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:58: T__28
                 {
-                mT__28(); 
+                mT__28();
 
                 }
                 break;
             case 10 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:64: Number
                 {
-                mNumber(); 
+                mNumber();
 
                 }
                 break;
             case 11 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:71: Exponent
                 {
-                mExponent(); 
+                mExponent();
 
                 }
                 break;
             case 12 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:80: String
                 {
-                mString(); 
+                mString();
 
                 }
                 break;
             case 13 :
                 // /development/grammars/json-antlr/grammar/JSON.g:1:87: WS
                 {
-                mWS(); 
+                mWS();
 
                 }
                 break;
@@ -945,6 +945,6 @@ public class JSONLexer extends Lexer {
     }
 
 
- 
+
 
 }

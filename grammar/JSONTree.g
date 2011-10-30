@@ -1,9 +1,9 @@
 tree grammar JSONTree;
 
-options { 
-tokenVocab=JSON; // reuse token types 
-ASTLabelType=CommonTree; // $label will have type CommonTree 
-} 
+options {
+tokenVocab=JSON; // reuse token types
+ASTLabelType=CommonTree; // $label will have type CommonTree
+}
 
 @header {
 package net.nextquestion.json;
@@ -32,7 +32,7 @@ import java.io.OutputStreamWriter;
             return new Double(result);
         }
     }
-    
+
     private String extractString(CommonTree token) {
         // StringBuffers are an efficient way to modify strings
         StringBuffer sb = new StringBuffer(token.getText());
@@ -83,7 +83,7 @@ import java.io.OutputStreamWriter;
                 case '\\':
                     sb.replace(slashIndex, slashIndex + 2, "\\"); // backslash
                     break;
-                    
+
                 case '/':
                     sb.replace(slashIndex, slashIndex + 2, "/"); // solidus
                     break;
@@ -124,7 +124,7 @@ import java.io.OutputStreamWriter;
 }
 
 value returns [Object result]
-	: s=string { $result = s; } 
+	: s=string { $result = s; }
 	| n=number { $result = n; }
 	| o=object { $result = o; }
 	| a=array { $result = a; }
@@ -137,13 +137,13 @@ string returns [String result]
 	: ^(STRING String)
 	  { $result = extractString($String); }
 	;
-	
+
 object returns [Map result]
 @init { result = new HashMap(); }
 	: ^(OBJECT pair[$result]+)
 	;
 
-number	returns [Object result] 
+number	returns [Object result]
 	: ^(NUMBER Number Exponent?)
 	  { $result = extractNumber($Number, $Exponent); }
 	;
@@ -152,9 +152,9 @@ array	returns [List list]
 @init{ list = new ArrayList(); }
 	: ^(ARRAY (v=value {$list.add(v); })+ )
 	;
-	
+
 pair [Map map]
-	: ^(FIELD key=String v=value) 
+	: ^(FIELD key=String v=value)
 	   { $map.put(extractString($key), v); }
 	;
 
